@@ -33,3 +33,7 @@ Added angular material to add color and design on the layout
 Added lazy loading for user details
 Added material table for user list
 Added pagination and search functionality
+
+Credentials
+Username: admin
+password: password
