@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Angular specific ignores
+node_modules/
+dist/
+tmp/
+out-tsc/
+.vscode/
