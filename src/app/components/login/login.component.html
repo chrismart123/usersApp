@@ -1,0 +1,18 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <h2>Login</h2>
+    </div>
+
+    <form (ngSubmit)="login()">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" [(ngModel)]="username">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="password" >
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <div id="formFooter">
+      <p *ngIf="errorMessage" style="color:red">{{ errorMessage }}</p>
+    </div>
+
+  </div>
+</div>

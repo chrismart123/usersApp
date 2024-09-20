@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+#NOTE
+Added a login component to know if user is authenticated and can access the user details page
+Added angular material to add color and design on the layout
+Added lazy loading for user details
+Added material table for user list
+Added pagination and search functionality

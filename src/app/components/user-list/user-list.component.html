@@ -1,0 +1,64 @@
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+<!-- <mat-list>
+  <mat-list-item *ngFor="let user of users">
+    <a [routerLink]="['/users', user.id]">{{ user.name }}</a>
+    <div class="clearfix"></div>
+    <p>{{ user.website }}</p>
+    <div class="clearfix"></div>
+    <p>{{ user.phone }}</p>
+    <div class="clearfix"></div>
+  </mat-list-item>
+  <div class="clearfix"></div>
+ </mat-list> -->
+
+ <div class="mat-elevation-z8">
+  <!-- Search Filter Input -->
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search users by name or website">
+  </mat-form-field>
+
+  <!-- User Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+
+    <!-- Website Column -->
+    <ng-container matColumnDef="website">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Website </th>
+      <td mat-cell *matCellDef="let user"> {{user.website}} </td>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+      <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+    </ng-container>
+
+       <!-- Clickable Link Column -->
+       <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let user">
+          <a [routerLink]="['/users', user.id]">View Details</a>
+        </td>
+      </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+</div>
